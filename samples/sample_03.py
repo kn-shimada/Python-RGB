@@ -1,3 +1,4 @@
+# Copyright (c) 2021 kn-shimada
 # 画像中の最頻値
 
 import numpy as np

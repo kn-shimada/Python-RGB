@@ -1,4 +1,5 @@
-# 中央値
+# Copyright (c) 2021 kn-shimada
+# 平均
 
 import numpy as np
 import PIL.ImageDraw
@@ -10,10 +11,10 @@ small_img = source.resize((100, 100))
 color_arr = np.array(small_img)
 w_size, h_size, n_color = color_arr.shape
 color_arr = color_arr.reshape(w_size * h_size, n_color)
-r = [elem[0] for elem in color_arr]
-g = [elem[1] for elem in color_arr]
-b = [elem[2] for elem in color_arr]
-color_median = (int(np.median(r)), int(np.median(g)), int(np.median(b)))
 
-im = PIL.Image.new('RGB', (100, 100), color_median)
-im.save('result_04.png')
+color_mean = np.mean(color_arr, axis=0)
+color_mean = color_mean.astype(int)
+color_mean = tuple(color_mean)
+
+im = PIL.Image.new('RGB', (100, 100), color_mean)
+im.save('result_01.png')

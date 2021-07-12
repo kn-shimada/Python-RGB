@@ -1,3 +1,4 @@
+# Copyright (c) 2021 kn-shimada
 # k平均法
 
 import numpy as np
